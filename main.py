@@ -1,1 +1,6 @@
-print ('hello world')
+print("  ___________")
+print(" /           \\")
+print("|  ^      ^   |")
+print("|     /_\     |")
+print("|   \_____/   |")
+print(" \___________/")
