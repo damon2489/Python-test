@@ -8,7 +8,7 @@ if first == 'yes':
     ay = input("Are you a people person? ")
     if ay == 'yes':
         print("You are a Seal")
-    if ay == 'no':
+    elif ay == 'no':
         print("You are a Duck")
     else:
         print("Please answer with 'yes' or 'no'.")
@@ -16,7 +16,7 @@ if first == 'no':
     bn = input("Are you energetic? ")
     if bn == 'yes':
         print("You are a Tiger")
-    if bn == 'no':
+    elif bn == 'no':
         print("You are a Koala")
     else:
         print("Please answer with 'yes' or 'no'.")
