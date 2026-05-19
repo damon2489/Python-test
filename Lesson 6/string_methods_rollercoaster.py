@@ -8,9 +8,7 @@ print("Welcome to the roller coaster, please answer these questions truthfully t
 height = int(input("What is your height in cm? "))
 age = int(input("What is your age? "))
 heart_condition = input("Do you have a heart condition? (yes/no)").strip().lower() == "yes"
-heart_condition = bool(heart_condition)  # convert to boolean
 vip_pass = input("Do you have a VIP pass? (yes/no)").strip().lower() == "yes"
-vip_pass = bool(vip_pass)  # convert to boolean
 
 
 # Check conditions and output verdict
