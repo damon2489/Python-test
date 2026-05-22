@@ -42,5 +42,11 @@ if answer6.lower().strip() == "cheetah":
     print("Correct!")
 else:
     print("Incorrect, the correct answer was cheetah")
-    
+
+#Question 7
+answer7 = input("What animal has 3 hearts? ")
+if answer7.lower().strip() == "octopus":
+    print("Correct!")
+else:
+    print("Incorrect, the correct answer was octopus, squid or cuttlefish")
 
