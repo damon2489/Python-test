@@ -24,18 +24,18 @@ play = True
 # INTRODUCTION
 # TODO Tell your user how to play wordle (make sure they know they must input 5 letter words)
 
-print("Welcome to Wordle, guess the 5 letter word, you'll get hints as you go")
+print("Welcome to Wordle, guess the 5 letter word")
 
 # MAIN
 # MAIN
 # game loop
 while play:
     word = random.choice(words)
-    attempts = 6
+    attempts = 7
     print("You have 6 attempts to guess the word.")
 
-    for attempt in range(1, attempts + 1):
-        guess = input(f"Attempt {attempts} - Enter your 5-letter guess: ").lower().strip()
+    for attempt in range(1, attempts):
+        guess = input(f"Attempt {attempt} - Enter your 5-letter guess: ").lower().strip()
         while len(guess) != 5:
             guess = input("Invalid entry. Please enter a 5-letter word: ").lower().strip()
 
@@ -55,9 +55,9 @@ while play:
 
         print("Feedback:", "".join(feedback))
 
-    else:
-        # executed if loop not broken -> user failed
-        print(f"Out of attempts. The word was '{word}'.")
+    
+     #user failed, out of guesses
+    print(f"Out of attempts. The word was '{word}'.")
 
     again = input("Play again? (yes/no): ").lower().strip()
     if again != 'yes':
