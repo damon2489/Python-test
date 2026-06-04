@@ -24,7 +24,7 @@ play = True
 # INTRODUCTION
 # TODO Tell your user how to play wordle (make sure they know they must input 5 letter words)
 
-print("Welcome to Wordle, guess the 5 letter word, you'll get hints as you go, you have 6 attempts to get it right")
+print("Welcome to Wordle, guess the 5 letter word, you'll get hints as you go")
 
 # MAIN
 # MAIN
@@ -32,11 +32,11 @@ print("Welcome to Wordle, guess the 5 letter word, you'll get hints as you go, y
 while play:
     word = random.choice(words)
     attempts = 6
-    print("\nI have chosen a 5-letter word. You have 6 attempts.")
+    print("You have 6 attempts to guess the word.")
 
     for attempt in range(1, attempts + 1):
-        guess = input(f"Attempt {attempt}/{attempts} - Enter your 5-letter guess: ").lower().strip()
-        while len(guess) != 5 or not guess.isalpha():
+        guess = input(f"Attempt {attempts} - Enter your 5-letter guess: ").lower().strip()
+        while len(guess) != 5:
             guess = input("Invalid entry. Please enter a 5-letter word: ").lower().strip()
 
         if guess == word:
