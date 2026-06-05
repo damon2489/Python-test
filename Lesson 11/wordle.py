@@ -7,6 +7,7 @@
 # TODO Import random so you can randomise the word
 import random
 
+
 # VALUES
 # TODO Create a list of at least 5 different 5-letter words
 words = [
@@ -15,8 +16,8 @@ words = [
     "knife", "light", "mouse", "noble", "ocean", "piano", "queen", "river", "stone",
     "tiger", "ultra", "vivid", "wheat", "xenon", "yacht", "zebra", "cable", "dance",
     "eagle", "fable", "giant", "honey", "ivory", "jewel", "alloy", "lucky", "magic",
-    "ninja", "oasis", "puzzle", "quilt", "robot", "sugar", "tulip", "unity", "vapor",
-    "whale", "yummy", "zesty", "slate", "crisp", "flock", "lucky"
+    "ninja", "oasis", "plier", "quilt", "robot", "sugar", "tulip", "unity", "vapor",
+    "whale", "table", "zesty", "slate", "crisp", "flock", "lucky"
     ]
 # TODO Create a variable called play and set it to True
 play = True
@@ -26,8 +27,6 @@ play = True
 
 print("Welcome to Wordle, guess the 5 letter word")
 
-# MAIN
-# MAIN
 # game loop
 while play:
     word = random.choice(words)
@@ -42,22 +41,23 @@ while play:
         if guess == word:
             print(f"Correct! The word was '{word}'. You guessed it in {attempt} attempts.")
             break
-
+        
         # build feedback list   
         feedback = []
-        for i in range(5):
-            if guess[i] == word[i]:
-                feedback.append(guess[i].upper())  # correct position
-            elif guess[i] in word:
-                feedback.append(f"({guess[i]})")  # wrong position
+        for letter in range(5):
+            if guess[letter] == word[letter]:
+                feedback.append(f"\033[42m{guess[letter].upper()}\033[0m")  # correct position
+            elif guess[letter] in word:
+                feedback.append(f"\033[43m{guess[letter]}\033[0m")  # wrong position, right letter
             else:
-                feedback.append("_")  # incorrect
+                feedback.append(f"\033[41m{guess[letter]}\033[0m")  # incorrect
 
         print("Feedback:", "".join(feedback))
 
     
      #user failed, out of guesses
-    print(f"Out of attempts. The word was '{word}'.")
+    if guess != word:
+        print(f"Out of attempts. The word was '{word}'.")
 
     again = input("Play again? (yes/no): ").lower().strip()
     if again != 'yes':
