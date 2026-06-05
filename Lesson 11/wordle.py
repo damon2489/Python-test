@@ -53,18 +53,7 @@ while play:
                 feedback.append(f"\033[41m{guess[letter].upper()}\033[0m")  # incorrect
 
                 # make it so that if multiple letters are the same, it only gives feedback for the correct number of letters in the word
-                # Count occurrences of each letter in the word and the guess
-        word_letter_count = {letter: word.count(letter) for letter in set(word)}
-        guess_letter_count = {letter: guess.count(letter) for letter in set(guess)}
-        for letter in set(guess):
-            if letter in word_letter_count:
-                correct_count = min(word_letter_count[letter], guess_letter_count[letter])
-                for i in range(correct_count):
-                    feedback[guess.index(letter, feedback.index(f"\033[42m{letter.upper()}\033[0m") + 1)] = f"\033[42m{letter.upper()}\033[0m"
-                for i in range(guess_letter_count[letter] - correct_count):
-                    feedback[guess.index(letter, feedback.index(f"\033[43m{letter.upper()}\033[0m") + 1)] = f"\033[43m{letter.upper()}\033[0m"
-
-
+                
 
         print("Feedback:", "".join(feedback))
 
