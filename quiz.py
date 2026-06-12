@@ -10,7 +10,7 @@ questions = [
     {"question": "What is the largest bird?", "answer": "Ostrich"},
     {"question": "What is the strongest animal relative to its size?", "answer": "Dung beetle"},
     {"question": "What is the fastest land animal?", "answer": "Cheetah"},
-    {"question": "What animal has 3 hearts?", "answer": "Octopus, squid or cuttlefish"},
+    {"question": "What animal has 3 hearts?", "answer": "Octopus" or "Squid" or "Cuttlefish"},
     {"question": "What is the sleepiest animal?", "answer": "Koala"},
     {"question": "What is the only bird that can fly backwards?", "answer": "Hummingbird"},
     {"question": "What is the only mammal capable of flight?", "answer": "Bat"},
@@ -23,7 +23,7 @@ random.shuffle(questions)
 
 for q in questions:
     answer = input(q["question"] + " ")
-    if answer.lower() == q["answer"].lower():
+    if answer.lower().strip() == q["answer"].lower():
         print("Correct!")
         score += 1
     else:
