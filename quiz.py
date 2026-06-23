@@ -14,7 +14,7 @@ questions = [
     {"question": "What is the sleepiest animal?", "answer": "Koala"},
     {"question": "What is the only bird that can fly backwards?", "answer": "Hummingbird"},
     {"question": "What is the only mammal capable of flight?", "answer": "Bat"},
-    {"question": "Out of the following 4 animals, which can hold their breath the longest underwater (answer with the letter)? A) Dolphin B) Orca C) Seal D) Sloth", "answer": "D"},
+    {"question": "Out of the following 4 animals, which can hold their breath the longest underwater? A) Dolphin B) Orca C) Seal D) Sloth", "answer": "D" or "Sloth" or "D) Sloth"},
     {"question": "What animal laughs when tickled?", "answer": "Rat"},
     {"question": "What is the only animal to have cube shaped poop?", "answer": "Wombat"},
     {"question": "What mammal has the strongest bite force?", "answer": "Hippopotamus"}
