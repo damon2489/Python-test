@@ -36,7 +36,6 @@ for q in questions:
     if user_answer.lower().strip() == q["answer"][0].lower() or user_answer.lower().strip() == q["answer"][1].lower() or user_answer.lower().strip() == q["answer"][2].lower():
         print("Correct!")
         score += 1
-
     else:
         print("Wrong")
 
