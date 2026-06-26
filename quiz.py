@@ -1,8 +1,10 @@
 #Animal quiz
+from py_compile import main
 import random
 #sets score to zero at start
 score=0
 print("Welcome to the animal quiz!")
+print("You will be asked 14 questions about animals")
 
 #questions in dictionary with question and answer
 questions = [
@@ -27,25 +29,19 @@ questions = [
 random.shuffle(questions)
 
 
-#Make a loop that randomly goes through the questions and asks for an answer, adding one to the score if right, not adding anything if wrong.
-def main():
-    score = 0
-    for q in questions:
-        user_answer = input(q["question"] + " ")
-        if isinstance(q["answer"], list):
-            if user_answer.lower().strip() in [a.lower() for a in q["answer"]]:
-                print("Correct!")
-                score += 1
-            else:
-                print("Wrong")
-        else:
-            if user_answer.lower().strip() == q["answer"].lower():
-                print("Correct!")
-                score += 1
-            else:
-                print("Wrong")
-    #final score
-    print("Your final score is:", score, "out of", len(questions))
+#A loop that randomly goes through the questions and asks for an answer, adding one to the score if right, not adding anything if wrong.
+
+for q in questions:
+    user_answer = input(q["question"] + " ")
+    if user_answer.lower().strip() == q["answer"].lower():
+        print("Correct!")
+        score += 1
+
+    else:
+        print("Wrong")
+
+#final score
+print("Your final score is:", score, "out of", len(questions))
 
 
 #checks if user wants to know answers
@@ -53,21 +49,7 @@ know_ans = input("Do you want to know the answers? (yes/no) ")
 if know_ans.lower() == "yes":
     for q in questions:
         print(q["question"], "-", q["answer"])
-# Asks if the user wants to play again
-play_again = input("Would you like to play again? (yes/no) ")
-if play_again.lower() == "yes":
-    score = 0
-    random.shuffle(questions)
-    for q in questions:
-        user_answer = input(q["question"] + " ")
-        if user_answer.lower() == q["answer"].lower():
-            print("Correct!")
-            score += 1
-        else:
-            print("Wrong") 
-elif play_again.lower() == "no":
-    print("Thanks for playing!")
 
-else:
-    print("Invalid, exiting game")
+print("Thanks for playing!")
+
 
