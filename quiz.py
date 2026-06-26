@@ -33,7 +33,7 @@ random.shuffle(questions)
 
 for q in questions:
     user_answer = input(q["question"] + " ")
-    if user_answer.lower().strip() in [answer.lower().strip() for answer in q["answer"]]:
+    if user_answer.lower().strip() in [str(a).strip().lower() for a in q["answer"]]:
         score += 1
         print("Correct!")
     else:
