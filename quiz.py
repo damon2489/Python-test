@@ -33,9 +33,9 @@ random.shuffle(questions)
 
 for q in questions:
     user_answer = input(q["question"] + " ")
-    if user_answer.lower().strip() == q["answer"][0].lower() or user_answer.lower().strip() == q["answer"][1].lower() or user_answer.lower().strip() == q["answer"][2].lower():
-        print("Correct!")
+    if user_answer.lower().strip() in [answer.lower().strip() for answer in q["answer"]]:
         score += 1
+        print("Correct!")
     else:
         print("Wrong")
 
