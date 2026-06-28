@@ -9,7 +9,7 @@ asks them if they want to play again.
 #imports random for the random shuffling of questions
 import random
 
-#sets score to zero at start
+#defining main function
 def main():
     while True:
         score = 0
@@ -50,16 +50,16 @@ def main():
             for q in questions:
                 print(q["question"], "-", q["answer"])
 
-        #checks if user wants to play again
+        #checks if user wants to play again, stops program if any answer other than yes
         play_again = input ("\nplay again (yes/no) ")
         if play_again.lower().strip() != "yes":
+            print("\nThanks for playing!")
             break
+            
+        
 
-        print("\nThanks for playing!")
-
-
-
-#A function for a loop that randomly goes through the questions and asks for an answer, adding one to the score if right, not adding anything if wrong.
+#defining ask_questions function which is a loop that goes through the questions,
+#adding one to the score if right, not adding anything if wrong.
 def ask_questions(questions_list):
     score=0
     for q in questions_list:
